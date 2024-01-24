@@ -1,0 +1,151 @@
+<div class="main">
+    <div class="searchbar">
+        <div style="width: 70%;">
+            <mat-form-field appearance="outline" style="width: 80%;">
+                <mat-label>Search Doctor name or Email</mat-label>
+                <mat-icon matPrefix>search</mat-icon>
+                <input  matInput placeholder="Search Doctor name or Email">
+            </mat-form-field>  
+            <button mat-button style="background-color: #ADD8E6;color: #4682B4; margin-left: 10px;">search</button>
+        </div>
+        <div class="calendar">
+            <mat-icon style="padding: 5px;background-color: #e0e0e0;border-radius: 5px;">calendar_month</mat-icon>  
+            <small style="display: flex;flex-direction: column;">
+                Today's Date<strong>2024-01-20</strong>
+            </small>
+        </div>
+    </div>
+    <strong>Status</strong><br>
+    <div class="status">
+        <div class="box">
+            <div>
+                <span><strong style="color: #0096ff;font-size: x-large;">1</strong></span><br>
+                Doctors
+            </div>
+            <div style="padding-right: 10px;">
+                <mat-icon>medication</mat-icon>           
+            </div>
+        </div>
+        <div class="box">
+            <div>
+                <span><strong style="color: #0096ff;font-size: x-large;">2</strong></span><br>
+                Patients
+            </div>
+            <div style="padding-right: 10px;">
+                <mat-icon>accessible</mat-icon>
+            </div>
+        </div>
+        <div class="box">
+            <div>
+                <span><strong style="color: #0096ff;font-size: x-large;">1</strong></span><br>
+                NewBooking
+            </div>
+            <div style="padding-right: 10px;">
+                <mat-icon>bookmark_border</mat-icon>
+            </div>
+        </div>
+        <div class="box">
+            <div>
+                <span><strong style="color: #0096ff;font-size: x-large;">0</strong></span><br>
+                Today Sessions
+            </div>
+            <div style="padding-right: 10px;">
+                <mat-icon>dashboard</mat-icon>
+            </div>
+        </div>
+    </div>
+    <div class="tables">
+        <div class="contents">
+            <h2 style="color: #0096ff;font-weight: bold;letter-spacing: 1px;">Upcoming Appointments until Next Friday</h2>
+            <div style="color: #707070;font-weight: bold;">Here's Quick access to Upcoming Appointments until 7 days more details available in @Appointment section</div>
+            <div>
+                <table mat-table class="mat-elevation-z8" class="table">
+                
+                    <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+                
+                    <!-- Position Column -->
+                    <!-- <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container> -->
+                
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="AppointmentNumber">
+                        <th mat-header-cell *matHeaderCellDef> Appointment Number </th>
+                        <td mat-cell *matCellDef="let element">  </td>
+                    </ng-container>
+                
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="PatientName">
+                        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+                        <td mat-cell *matCellDef="let element">  </td>
+                    </ng-container>
+                
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="Doctor">
+                        <th mat-header-cell *matHeaderCellDef> Doctor </th>
+                        <td mat-cell *matCellDef="let element">  </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="session">
+                        <th mat-header-cell *matHeaderCellDef> session </th>
+                        <td mat-cell *matCellDef="let element"> </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <div style="display: flex;height: 100%;align-items: flex-end;">
+                    <button style="width: 100%;" mat-raised-button color="primary">Show All Appointments</button>
+                </div>
+            </div>
+        </div>
+        <div class="contents">
+            <h2 style="color: #0096ff;font-weight: bold;letter-spacing: 1px;text-align: end;">Upcoming sessions until Next Friday</h2>
+            <div style="color: #707070;font-weight: bold;text-align: end;">Here's Quick access to Upcoming sessions that scheduled until 7 days Add, Remove and many features available in @schedule section</div>
+            <div>
+                <table mat-table class="mat-elevation-z8" class="table">
+                
+                    <!--- Note that these columns can be defined in any order.
+                                        The actual rendered columns are set as a property on the row definition" -->
+                
+                    <!-- Position Column -->
+                    <!-- <ng-container matColumnDef="position">
+                                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                    </ng-container> -->
+                
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="SessionTitle">
+                        <th mat-header-cell *matHeaderCellDef> Session Title </th>
+                        <td mat-cell *matCellDef="let element"> </td>
+                    </ng-container>
+                
+                    <!-- Weight Column -->
+                    <!-- <ng-container matColumnDef="PatientName">
+                        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+                        <td mat-cell *matCellDef="let element"> </td>
+                    </ng-container> -->
+                
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="Doctor">
+                        <th mat-header-cell *matHeaderCellDef> Doctor </th>
+                        <td mat-cell *matCellDef="let element"> </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="Schedule" style="flex: 1;">
+                        <th mat-header-cell *matHeaderCellDef> Scheduled Date & Time </th>
+                        <td mat-cell *matCellDef="let element"> </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+                </table>
+                <div style="display: flex;height: 100%;align-items: flex-end;">
+                    <button style="width: 100%;" mat-raised-button color="primary">Show All Sessions</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
